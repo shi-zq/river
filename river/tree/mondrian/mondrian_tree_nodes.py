@@ -101,9 +101,9 @@ class MondrianNode(base.Base):
 
         depth += 1
 
-        left, right = self.children
-        left.update_depth(depth)
-        right.update_depth(depth)
+        #left, right = self.children
+        #left.update_depth(depth)
+        #right.update_depth(depth)
 
     def update_weight_tree(self):
         """Update the weight of the node in the tree."""
@@ -158,8 +158,8 @@ class MondrianNodeClassifier(MondrianNode):
         self.counts = leaf.counts.copy()
 
         if copy_all:
-            self.memory_range_min = leaf.memory_range_min
-            self.memory_range_max = leaf.memory_range_max
+            self.memory_range_min = leaf.memory_range_min.copy()
+            self.memory_range_max = leaf.memory_range_max.copy()
             self.n_samples = leaf.n_samples
 
     def score(self, y_idx: int, dirichlet: float, n_classes: int) -> float:
