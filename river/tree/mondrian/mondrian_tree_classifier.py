@@ -180,8 +180,8 @@ class MondrianTreeClassifier(MondrianTree, base.Classifier):
 
             # Update the level of the modified nodes
             new_depth += 1
-            old_left.update_depth(new_depth)
-            old_right.update_depth(new_depth)
+            #old_left.update_depth(new_depth)
+            #old_right.update_depth(new_depth)
 
             # Update split info
             node.feature = feature
